@@ -1,0 +1,28 @@
+                                    Normalized (Pointwise) Mutual Information
+                                        in Collocation Extraction
+
+
+- el trabajo propone comparar la distribucion estadistica de la combinacion con la distribucion de sus componentes a traves de una medida de asociacion
+- no existe una medida de asociacion que sea la mejor en todas las situaciones
+- elegir una medida de asociacion implica una evaluacion empirica , asi como , el entendimiendo de la teoria basica de la tecnica
+- propone 2 nuevos metodos de medidas teoricas de informacion conmun: Informacion mutua y la informacion mutua puntual
+
+
+- Cuando dos palabras solo aparecen junta, entonces existe un fuerte correlacion por lo que p(x,y)=p(x)=p(y) ---LA FILOSOFIA
+
+### Mutual Information
+
+- Es la informacion superpuesta entre dos variables aleatorias, donde I(x,y)=0, cuando no existe ninguna dependencia entre las viables
+- Y cuando I(x,y) alcalza el maximo valor es porque existe una correlacion perfecta entre variables
+- I(x,y)=H(x) + H(y) - H(x,y)
+- MI es igual a la entropía de las dos variables indicadoras cuando están perfectamente correlacionada. Por lo tanto obtiene valores muy altos 
+  para variables distribuidas mas uniformemente.
+- MI es ligeramente mayor para las combinaciones que ocurren con mayor frecuencia. Sin embargo no tiene un limite superior fijo por lo que es mas facil interpretarlo como una medida de dependencia que una medida de asociacion 
+
+### Pointwise Mutual Information
+
+- una medida de cuánto difiere la probabilidad real de una co-ocurrencia particular de eventos p (x, y) de lo que cabría esperar sobre la base de las probabilidades de los eventos individuales y el supuesto de independencia p (x) p (y). Con el fin de reducir la sensitividad por la baja frequencia de datos
+- Una observacion de PMI es que para eventos de baja frecuencia, recibe relativamente un alto score por lo que pares de palabras infrecuentes tienden a dominar la lista de bigrams, poro no siempre. puede funcionar bien en corpus donde no existe una fuerte correlacion entre palabras
+
+### Normalized MI and PMI
+- Donde el valor maximo que tomará será 1 por lo que se trata de minizar los errores de ambas tecnicas
